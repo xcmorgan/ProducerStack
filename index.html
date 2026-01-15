@@ -139,7 +139,7 @@
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 15px;
             list-style: none;
         }
 
@@ -147,7 +147,7 @@
             color: var(--secondary-color);
             text-decoration: none;
             font-weight: 500;
-            font-size: 15px;
+            font-size: 14px;
             transition: all 0.3s;
             padding: 8px 16px;
             border-radius: 20px;
@@ -734,6 +734,30 @@
             display: none !important;
         }
 
+        /* Example Banner */
+        .example-banner {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--accent-color);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .example-banner h3 {
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .example-banner p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
         /* Responsive Navigation */
         @media (max-width: 768px) {
             .nav-links {
@@ -783,6 +807,11 @@
             
             .section-title {
                 font-size: 36px;
+            }
+
+            .nav-links a {
+                padding: 12px 20px;
+                font-size: 15px;
             }
         }
 
@@ -856,6 +885,10 @@
 
             <section class="container" style="padding: 100px 0;">
                 <h2 class="section-title">Featured Producers</h2>
+                <div class="example-banner">
+                    <h3><i class="fas fa-info-circle"></i> Example Producers</h3>
+                    <p>These are example beats to show how the platform works. Real beats will appear here once producers upload their music via WhatsApp.</p>
+                </div>
                 <div class="producers-grid" id="producersGrid">
                     <!-- Producer cards will be loaded here -->
                 </div>
@@ -891,6 +924,11 @@
                 <div style="text-align: center; margin-bottom: 80px;">
                     <h1 style="font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 800; margin-bottom: 20px;">Available Beats</h1>
                     <p style="color: var(--text-light); font-size: 18px; max-width: 600px; margin: 0 auto;">Browse beats from producers across South Africa</p>
+                    
+                    <div class="example-banner" style="margin-top: 40px;">
+                        <h3><i class="fas fa-info-circle"></i> Example Beats Only</h3>
+                        <p>These are example beats that cannot be played. Real beats with audio previews will appear here once producers upload their music via WhatsApp for R15 per beat.</p>
+                    </div>
                     
                     <div style="display: flex; gap: 15px; justify-content: center; margin-top: 50px; flex-wrap: wrap;">
                         <select id="genreFilter" style="padding: 14px 24px; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.5); color: white; font-family: 'Inter', sans-serif; min-width: 200px; backdrop-filter: blur(10px);">
@@ -998,6 +1036,7 @@
                         <li><a href="#" onclick="loadPage('home')">Home</a></li>
                         <li><a href="#" onclick="loadPage('beats')">Browse Beats</a></li>
                         <li><a href="#" onclick="loadPage('getuploaded')">Upload Beats</a></li>
+                        <li><a href="exploresongs.html">Explore Songs</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1016,25 +1055,25 @@
     </footer>
 
     <script>
-        // Updated example data - NO EXTERNAL SONGS
+        // Only 2 example beats with different images
         const producers = [
             {
                 id: 1,
                 name: "DJ Platinum",
                 genre: "Amapiano",
                 price: "2500",
-                image: "guitars.jpg", // Using local image
+                image: "amapiano.jpg", // Changed to amapiano.jpg
                 location: "Johannesburg",
-                audioUrl: null // No audio for example producers
+                audioUrl: null
             },
             {
                 id: 2,
                 name: "Beat Master SA",
                 genre: "Hip Hop",
                 price: "1800",
-                image: "guitars.jpg", // Using local image
+                image: "hiphop.jpg", // Changed to hiphop.jpg
                 location: "Cape Town",
-                audioUrl: null // No audio for example producers
+                audioUrl: null
             }
         ];
 
@@ -1045,10 +1084,10 @@
                 producer: "DJ Platinum",
                 genre: "Amapiano",
                 price: "2500",
-                image: "guitars.jpg", // Using local image
+                image: "amapiano.jpg", // Changed to amapiano.jpg
                 bpm: "115 BPM",
                 key: "F minor",
-                audioUrl: null // No audio - just examples
+                audioUrl: null
             },
             {
                 id: 2,
@@ -1056,10 +1095,10 @@
                 producer: "Beat Master SA",
                 genre: "Hip Hop",
                 price: "1800",
-                image: "guitars.jpg", // Using local image
+                image: "hiphop.jpg", // Changed to hiphop.jpg
                 bpm: "95 BPM",
                 key: "C# minor",
-                audioUrl: null // No audio - just examples
+                audioUrl: null
             }
         ];
 
